@@ -1,0 +1,27 @@
+@import "@/common/styles/colors"
+
+.action-card
+  display: flex
+  flex-direction: column
+  background-color: $background
+  padding: 2rem 0
+  backdrop-filter: blur(10px)
+  border: 2px solid $border
+  border-radius: 1rem
+  width: 13rem
+  text-align: center
+  gap: 2rem
+  transition: transform 0.2s ease-in-out
+  cursor: pointer
+  user-select: none
+
+  svg
+    font-size: 52pt
+    color: $white
+
+  h1
+    margin: 0
+    color: $white
+
+  &:hover
+    transform: scale(1.1)
