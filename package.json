@@ -1,0 +1,9 @@
+{
+  "name": "countryguessr",
+  "version": "1.0.0-ALPHA",
+  "description": "The server of the CountryGuesser game",
+  "main": "server/index.js",
+  "repository": "https://github.com/gnmyt/CountryGuessr.git",
+  "author": "Mathias Wagner <germannewsmaker@gmail.com>",
+  "license": "MIT"
+}
