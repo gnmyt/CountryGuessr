@@ -1,7 +1,10 @@
+import PageTitle from "@/common/components/PageTitle";
+import "./styles.sass";
+
 export const Home = () => {
     return (
-        <>
-            <h1 style={{color: "#FFFFFF"}}>Home</h1>
-        </>
+        <div className="home-page">
+            <PageTitle />
+        </div>
     )
 }
