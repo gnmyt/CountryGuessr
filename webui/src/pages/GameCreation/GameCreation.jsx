@@ -3,6 +3,7 @@ import PageTitle from "@/common/components/PageTitle";
 import InfoArea from "@/pages/GameCreation/components/InfoArea";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlay} from "@fortawesome/free-solid-svg-icons";
+import SettingsArea from "@/pages/GameCreation/components/SettingsArea";
 
 export const GameCreation = () => {
     return (
@@ -16,9 +17,7 @@ export const GameCreation = () => {
 
                 <div className="right-area">
 
-                    <div className="glassy settings-area">
-
-                    </div>
+                    <SettingsArea />
 
                     <button className="glassy start-btn"><FontAwesomeIcon icon={faPlay} /> Starten</button>
                 </div>
