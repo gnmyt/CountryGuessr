@@ -16,11 +16,11 @@ export const GameCreation = () => {
 
                 <div className="right-area">
 
-                    <div className="settings-area">
+                    <div className="glassy settings-area">
 
                     </div>
 
-                    <button className="start-btn"><FontAwesomeIcon icon={faPlay} /> Starten</button>
+                    <button className="glassy start-btn"><FontAwesomeIcon icon={faPlay} /> Starten</button>
                 </div>
             </div>
         </div>
