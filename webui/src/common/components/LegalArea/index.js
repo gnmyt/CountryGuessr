@@ -1,0 +1,1 @@
+export {LegalArea as default} from "./LegalArea.jsx";
