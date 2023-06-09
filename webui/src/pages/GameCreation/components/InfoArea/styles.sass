@@ -1,0 +1,40 @@
+@import "@/common/styles/colors"
+
+.info-area
+  h1
+    margin: 0
+    font-size: 42pt
+    color: $white
+
+  .info-subtext
+    margin: 0
+    font-size: 16pt
+    color: $white
+    font-weight: 700
+
+.member-area
+  margin-top: 2rem
+  display: flex
+  flex-direction: column
+
+  .member-title
+    display: flex
+    gap: 1rem
+    align-items: center
+
+    svg
+      font-size: 16pt
+      color: $white
+
+    p
+      margin: 0
+      font-size: 18pt
+      font-weight: 700
+      color: $white
+
+  .member-grid
+    max-width: 30rem
+    margin-top: 1rem
+    display: grid
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr))
+    gap: 1.5rem
