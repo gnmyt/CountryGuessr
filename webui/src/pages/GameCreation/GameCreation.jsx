@@ -4,8 +4,14 @@ import InfoArea from "@/pages/GameCreation/components/InfoArea";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlay} from "@fortawesome/free-solid-svg-icons";
 import SettingsArea from "@/pages/GameCreation/components/SettingsArea";
+import {useContext} from "react";
+import {StateContext} from "@/common/contexts/StateContext";
 
 export const GameCreation = () => {
+    const {setCurrentState} = useContext(StateContext);
+
+    const startGame = () => setCurrentState("Game");
+
     return (
         <div className="game-wrapper">
             <div className="title-area">
@@ -19,7 +25,7 @@ export const GameCreation = () => {
 
                     <SettingsArea />
 
-                    <button className="glassy start-btn"><FontAwesomeIcon icon={faPlay} /> Starten</button>
+                    <button className="glassy start-btn" onClick={startGame}><FontAwesomeIcon icon={faPlay} /> Starten</button>
                 </div>
             </div>
         </div>
