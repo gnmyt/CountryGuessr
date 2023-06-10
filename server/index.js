@@ -6,7 +6,7 @@ const app = express();
 app.disable("x-powered-by");
 
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server, {cors: {origin: "*"}});
 
 io.on("connection", require("./handler/connection"));
 
