@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser, faUserGroup} from "@fortawesome/free-solid-svg-icons";
 import Member from "@/pages/GameCreation/components/InfoArea/components/Member";
 
-export const InfoArea = () => {
+export const InfoArea = ({members}) => {
 
     return (
         <div className="info-area">
@@ -19,9 +19,9 @@ export const InfoArea = () => {
 
                 <div className="member-grid">
 
-                    <Member name="User" />
-
-                    <Member name="User Nr. 2" />
+                    {members.map((member) => (
+                        <Member name={member.name} key={member.id} />
+                    ))}
 
                 </div>
             </div>
