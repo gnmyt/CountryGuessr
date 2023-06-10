@@ -11,6 +11,15 @@ module.exports.connectUserToRoom = (roomId, user) => {
     console.log(JSON.stringify(rooms));
 }
 
+module.exports.getUserRoom = (userId) => {
+    for (const roomId in rooms) {
+        const room = rooms[roomId];
+        const memberIndex = room.members.findIndex(member => member.id === userId);
+
+        if (memberIndex !== -1) return roomId;
+    }
+}
+
 module.exports.disconnectUser = (userId) => {
     for (const roomId in rooms) {
         const room = rooms[roomId];
