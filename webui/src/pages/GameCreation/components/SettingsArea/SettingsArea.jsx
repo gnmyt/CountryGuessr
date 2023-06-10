@@ -24,7 +24,7 @@ export const SettingsArea = () => (
                 <h2>Runden</h2>
                 <select className="glassy settings-input">
                     {[...Array(10).keys()].map((i) => (
-                        <option value={i}>{i} Runden</option>
+                        <option value={i} key={i}>{i} Runden</option>
                     ))}
                 </select>
             </div>
@@ -33,7 +33,7 @@ export const SettingsArea = () => (
                 <h2>Ratezeit</h2>
                 <select className="glassy settings-input">
                     {[...Array(10).keys()].map((i) => (
-                        <option value={i}>{i} Sekunden</option>
+                        <option value={i} key={i}>{i} Sekunden</option>
                     ))}
                 </select>
             </div>
