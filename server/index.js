@@ -1,7 +1,15 @@
 const express = require("express");
-
+const { Server } = require("socket.io");
+const http = require("http");
 const app = express();
 
-app.listen(5287, () => {
+app.disable("x-powered-by");
+
+const server = http.createServer(app);
+const io = new Server(server);
+
+io.on("connection", require("./handler/connection"));
+
+server.listen(5287, () => {
     console.log("Server running on port 5287");
 });
