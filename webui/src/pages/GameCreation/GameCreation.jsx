@@ -4,13 +4,34 @@ import InfoArea from "@/pages/GameCreation/components/InfoArea";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlay} from "@fortawesome/free-solid-svg-icons";
 import SettingsArea from "@/pages/GameCreation/components/SettingsArea";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {StateContext} from "@/common/contexts/StateContext";
+import {SocketContext} from "@/common/contexts/SocketContext/index.js";
 
 export const GameCreation = () => {
     const {setCurrentState} = useContext(StateContext);
+    const {connect, send, addListener} = useContext(SocketContext);
+    const [member, setMember] = useState([]);
 
-    const startGame = () => setCurrentState("Game");
+    const startGame = () => {
+        connect();
+
+        addListener("room-created", (data) => {
+            console.log(data);
+        });
+
+        addListener("user-connected", (data) => {
+            setMember(members => [...members, data]);
+        });
+
+        addListener("user-disconnected", (data) => {
+            setMember(members => members.filter(member => member.id !== data));
+        });
+
+        send("create-room", {name: "Test"});
+
+        // setCurrentState("Game");
+    }
 
     return (
         <div className="game-wrapper">
@@ -19,7 +40,7 @@ export const GameCreation = () => {
             </div>
 
             <div className="creation-area">
-                <InfoArea />
+                <InfoArea members={member} />
 
                 <div className="right-area">
 
