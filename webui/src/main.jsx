@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "@/common/styles/main.sass";
 import BlurredBackground from "@/common/components/BlurredBackground";
 import {StateProvider} from "@/common/contexts/StateContext";
+import {SocketProvider} from "@/common/contexts/SocketContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
@@ -11,7 +12,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         <div className="app">
             <StateProvider>
-                <App/>
+                <SocketProvider>
+                    <App/>
+                </SocketProvider>
             </StateProvider>
         </div>
 
